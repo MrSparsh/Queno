@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "852154050042",
+    "firebase_url": "https://queno-ceae0.firebaseio.com",
+    "project_id": "queno-ceae0",
+    "storage_bucket": "queno-ceae0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:852154050042:android:ec55f26d53795391",
+        "android_client_info": {
+          "package_name": "com.example.prashanjeet.firebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "852154050042-gq5e892lgpq09e72tjj1it0ronl0ak6r.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.prashanjeet.firebase",
+            "certificate_hash": "162fafe5389312ff1e4bd950a3c455cb524e6e20"
+          }
+        },
+        {
+          "client_id": "852154050042-d60d8amub1eir66qjgajjnssv0rddol5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCcu2HJ27TUQdbQxYfbLjTNuKj7Hilxnps"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "852154050042-d60d8amub1eir66qjgajjnssv0rddol5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
