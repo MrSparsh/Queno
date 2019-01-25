@@ -1,18 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context="com.example.prashanjeet.firebase.MainActivity">
+<LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.prashanjeet.firebase.MainActivity">
+    android:orientation="vertical"
+    android:layout_alignParentTop="true"
+    android:layout_alignParentStart="true">
 
-    <Button
-        android:id="@+id/btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="btnClicked"
-        android:text="Button"
-        tools:layout_editor_absoluteX="147dp"
-        tools:layout_editor_absoluteY="230dp" />
+    <ImageView
+        android:id="@+id/UserimageView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.5"
+        android:background="@android:color/holo_blue_light" />
+</LinearLayout>
+<LinearLayout
+    android:id="@+id/loginLayout"
+    android:layout_width="300dp"
+    android:layout_height="400dp"
+    android:background="@drawable/login"
+    android:orientation="vertical"
+    android:padding="30dp"
+    android:weightSum="1"
+    android:layout_alignParentTop="true"
+    android:layout_centerHorizontal="true"
+    tools:layout_editor_absoluteY="0dp"
+    tools:layout_editor_absoluteX="0dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="100dp"
+        android:layout_weight="0.14">
+
+        <Button
+            android:id="@+id/GotouserLogin"
+            android:layout_width="234dp"
+            android:layout_height="60dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="-4dp"
+            android:background="@drawable/loginbuttonlayout"
+            android:onClick="loginClicked"
+            android:text="USER LOGIN"
+            android:textColor="@android:color/white"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginBottom="50dp"
+        android:layout_marginTop="60dp"
+        android:layout_weight="0.14">
+
+        <Button
+            android:id="@+id/GotoAdminLogin"
+            android:layout_width="234dp"
+            android:layout_height="70dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="-10dp"
+            android:background="@drawable/loginbuttonlayout"
+            android:onClick="loginClicked"
+            android:text="ADMIN LOGIN"
+            android:textColor="@android:color/white" />
+    </LinearLayout>
+
+</LinearLayout>
 
 </RelativeLayout>
