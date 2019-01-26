@@ -10,7 +10,7 @@ If you want to join more than one queue on a given day then you can book the tim
 * Join more than one queue with minimum waiting time which also consideres the distance you have to travel.
 
 ## Future Scope
-* Decreasing the waiting time more by making a learning model which model which will return the average traffic at any time and regulating our queue management according to that.
+* Decreasing the waiting time more by making a learning model which which will return the average traffic at any time and regulating our queue management according to that.
 
 ## Contributors
 * [Prajjwal Yadav](https://github.com/prajjyadav) 
