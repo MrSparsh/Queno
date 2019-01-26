@@ -5,6 +5,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.CheckBox;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -16,9 +19,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Date;
@@ -42,22 +43,6 @@ public class Bussiness extends AppCompatActivity {
         businessList = new ArrayList<SubService>();
         firebaseAuth=FirebaseAuth.getInstance();
 
-
-//        adminsRef.addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(DataSnapshot dataSnapshot) {
-//                for (DataSnapshot childDataSnapshot : dataSnapshot.getChildren()){
-//                    System.out.println(childDataSnapshot.getValue(Map.class).get("companyName"));
-//
-//                }
-//            }
-//
-//            @Override
-//            public void onCancelled(DatabaseError databaseError) {
-//
-//            }
-//        });
-
         businessList = new ArrayList<SubService>();
 
         businessListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -69,7 +54,6 @@ public class Bussiness extends AppCompatActivity {
         });
 
     }
-
     @Override
     protected void onStart() {
         super.onStart();
@@ -81,8 +65,6 @@ public class Bussiness extends AppCompatActivity {
 
         try {
 
-//            adminsRef = FirebaseDatabase.getInstance().getReference("users").child(userId);
-
             adminsRef.addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
@@ -92,29 +74,8 @@ public class Bussiness extends AppCompatActivity {
                     for (DataSnapshot mealSnapshot : dataSnapshot.getChildren()) {
                         SubService a = mealSnapshot.getValue(SubService.class);
                         businessList.add(a);
-//
-//                        Date c = Calendar.getInstance().getTime();
-//                        //System.out.println("Current time => " + c);
-//
-//                        SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
-//                        String formattedDate = df.format(c);
-//
-//                        if (formattedDate.compareTo(a.date) <= 0 && a.getRegistration().compareTo("open") == 0) {
-//                            mealList.add(a);
-//                        }
-
 
                     }
-
-//                    Collections.sort(mealList, new Comparator() {
-//                        @Override
-//                        public int compare(Object o1, Object o2) {
-//                            Meal a1 = (Meal) o1;
-//                            Meal a2 = (Meal) o2;
-//                            return a1.date.compareToIgnoreCase(a2.date);
-//                        }
-//                    });
-
 
 
                     ListAdapter customListAdapter = new BussinessListAdapter(Bussiness.this,businessList);
@@ -124,6 +85,16 @@ public class Bussiness extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(), "No Services found", Toast.LENGTH_SHORT).show();
                         // progressDialog.dismiss();
                     }
+                    businessListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                        @Override
+                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                            CheckBox checkBox = (CheckBox)view.findViewById(R.id.checkBox3);
+                            if(checkBox.isChecked()){
+                                Toast.makeText(Bussiness.this,"1"+position,Toast.LENGTH_SHORT).show();
+                            }
+                            Toast.makeText(Bussiness.this,"1"+position,Toast.LENGTH_SHORT).show();
+                        }
+                    });
 
                 }
 

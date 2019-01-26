@@ -5,19 +5,25 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="29dp"
-        android:layout_weight="1"
-        android:text="Time"/>
+        android:layout_width="5dp"
+        android:layout_height="40dp"
+        android:layout_weight="0.42"
+        android:padding="10px"
+        android:text="Time"
+        android:textSize="18sp" />
+
     <ImageView
         android:layout_width="29dp"
-        android:layout_height="29dp"
-        android:src="@drawable/chain"/>
+        android:layout_height="40dp"
+        android:src="@drawable/chain" />
+
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
-        android:layout_height="29dp"
+        android:layout_height="40dp"
         android:layout_weight="1"
-        android:text="details" />
+        android:padding="10px"
+        android:text="details"
+        android:textSize="18sp" />
 
 </LinearLayout>
