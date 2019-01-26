@@ -1,22 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
 xmlns:app="http://schemas.android.com/apk/res-auto"
 xmlns:tools="http://schemas.android.com/tools"
 android:layout_width="match_parent"
 android:layout_height="match_parent"
-tools:context="com.example.prashanjeet.firebase.AdminSignup">
+tools:context="com.example.prashanjeet.firebase.UserSignup">
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:layout_alignParentTop="true"
-    android:layout_alignParentStart="true"
-    tools:layout_editor_absoluteY="8dp"
-    tools:layout_editor_absoluteX="8dp"
-    android:layout_alignParentLeft="true">
+    android:layout_alignParentStart="true">
+
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/UserimageView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1.5"
@@ -31,9 +28,7 @@ tools:context="com.example.prashanjeet.firebase.AdminSignup">
     android:padding="30dp"
     android:weightSum="1"
     android:layout_alignParentTop="true"
-    android:layout_centerHorizontal="true"
-    tools:layout_editor_absoluteY="0dp"
-    tools:layout_editor_absoluteX="0dp">
+    android:layout_centerHorizontal="true">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -41,30 +36,13 @@ tools:context="com.example.prashanjeet.firebase.AdminSignup">
         android:layout_marginBottom="20dp"
         android:layout_marginTop="-20dp"
         android:layout_weight="0.14">
-        <EditText
-            android:id="@+id/ServiceName"
-            android:layout_width="match_parent"
-            android:layout_height="51dp"
-            android:layout_marginTop="5dp"
-            android:hint="ServiceName"
-            android:inputType="text"
-            android:paddingBottom="1dp"
-            android:textColor="@android:color/white"
-            android:textColorHint="@android:color/white" />
 
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginBottom="20dp"
-        android:layout_marginTop="-20dp"
-        android:layout_weight="0.14">
         <EditText
-            android:id="@+id/ServiceDomain"
+            android:id="@+id/UserName"
             android:layout_width="match_parent"
             android:layout_height="51dp"
             android:layout_marginTop="5dp"
-            android:hint="ServiceDomain"
+            android:hint="username"
             android:inputType="text"
             android:paddingBottom="1dp"
             android:textColor="@android:color/white"
@@ -93,8 +71,9 @@ tools:context="com.example.prashanjeet.firebase.AdminSignup">
         android:layout_marginBottom="20dp"
         android:layout_marginTop="-20dp"
         android:layout_weight="0.14">
+
         <EditText
-            android:id="@+id/Email"
+            android:id="@+id/UserEmail"
             android:layout_width="match_parent"
             android:layout_height="51dp"
             android:layout_marginTop="5dp"
@@ -110,8 +89,9 @@ tools:context="com.example.prashanjeet.firebase.AdminSignup">
         android:layout_marginBottom="20dp"
         android:layout_marginTop="-20dp"
         android:layout_weight="0.14">
+
         <EditText
-            android:id="@+id/Signuppassword"
+            android:id="@+id/UserSignuppassword"
             android:layout_width="match_parent"
             android:layout_height="51dp"
             android:layout_marginTop="5dp"
@@ -127,8 +107,9 @@ tools:context="com.example.prashanjeet.firebase.AdminSignup">
         android:layout_marginBottom="20dp"
         android:layout_marginTop="-20dp"
         android:layout_weight="0.14">
+
         <EditText
-            android:id="@+id/Contact"
+            android:id="@+id/UserContact"
             android:layout_width="match_parent"
             android:layout_height="51dp"
             android:layout_marginTop="5dp"
@@ -140,14 +121,14 @@ tools:context="com.example.prashanjeet.firebase.AdminSignup">
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="245dp"
         android:layout_height="10dp"
-        android:layout_weight="0.14"
+        android:layout_weight="0.13"
         android:layout_marginTop="20dp"
         android:paddingTop="10dp">
 
         <Button
-            android:id="@+id/SignupButton"
+            android:id="@+id/UserSignupButton"
             android:layout_width="234dp"
             android:layout_height="40dp"
             android:layout_marginBottom="20dp"
@@ -159,5 +140,4 @@ tools:context="com.example.prashanjeet.firebase.AdminSignup">
             android:textColor="@android:color/white" />
     </LinearLayout>
 </LinearLayout>
-
 </RelativeLayout>

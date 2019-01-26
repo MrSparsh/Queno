@@ -17,7 +17,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".LiveQueue" />
-        <activity android:name=".AdminSignup"></activity>
+        <activity android:name=".AdminSignup" />
+        <activity android:name=".UserSignup" />
+        <activity android:name=".UserLogin"></activity>
     </application>
 
 </manifest>
