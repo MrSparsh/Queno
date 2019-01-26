@@ -52,7 +52,10 @@
         <activity android:name=".UserSignup" />
         <activity android:name=".UserLogin" />
         <activity android:name=".UserHome" />
-        <activity android:name=".ServiceInfoActivity"></activity>
+        <activity android:name=".ServiceInfoActivity" />
+        <activity android:name=".SubServiceDetailsActivity"></activity>
+
+        <activity android:name=".AdminLogin"></activity>
     </application>
 
 </manifest>

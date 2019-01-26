@@ -30,8 +30,8 @@ public class ServiceInfoActivity extends AppCompatActivity {
                 TextView ServiceDomain = (TextView)findViewById(R.id.ServiceDomain);
                 TextView expected_time = (TextView)findViewById(R.id.expected_time);
                 TextView best_time = (TextView)findViewById(R.id.best_time);
-                if(ServiceName.getText() == "" || ServiceDomain.getText() == "" || expected_time.getText() == ""
-                        || best_time.getText() == ""){
+                if(ServiceName.getText().equals("") || ServiceDomain.getText().equals("")|| expected_time.getText().equals("")
+                        || best_time.getText().equals("")){
                     Toast.makeText(ServiceInfoActivity.this,"All Needed!!!",Toast.LENGTH_LONG);
                     return;
                 }

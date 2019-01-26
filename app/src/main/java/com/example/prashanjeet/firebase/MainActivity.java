@@ -82,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
         gotoAdminLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent  intent  = new  Intent(MainActivity.this,UserSignup.class);
+                Intent  intent  = new  Intent(MainActivity.this,AdminLogin.class);
                 startActivity(intent);
                 finish();
             }

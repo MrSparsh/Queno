@@ -44,7 +44,8 @@ public class UserSignup extends AppCompatActivity {
         UserSignUpbtn = (Button)findViewById(R.id.UserSignupButton);
         name = (EditText)findViewById(R.id.Name);
         userEmail = (EditText)findViewById(R.id.UserEmail);
-        userPassword = (EditText)findViewById(R.id.UserSignuppassword);
+        userPassword = (EditText)findViewById(R.id.UserPassword);
+        username = (EditText)findViewById(R.id.UserName);
         //studentHostel = (EditText)findViewById(R.id.studentHost);
         // studentHostel = (Spinner)findViewById(R.id.studentHost);
         // studentRoom = (EditText)findViewById(R.id.studentRoom);
@@ -138,12 +139,12 @@ public class UserSignup extends AppCompatActivity {
         String userN = name.getText().toString();
         String userP = userPassword.getText().toString();
         String userE = userEmail.getText().toString();
-        String username1=username.getText().toString();
+        String username1 =username.getText().toString();
         //final String studentR = studentRoom.getText().toString().trim();
         final String userC = userContact.getText().toString().trim();
         //String studentRegn = studentReg.getText().toString();
         // String studentH = studentHostel.getText().toString();
-        String studentH =studentHostel.getSelectedItem().toString();
+        //String studentH =studentHostel.getSelectedItem().toString();
         if(userN.isEmpty()||userP.isEmpty()||userE.isEmpty()|| userC.isEmpty()||username1.isEmpty())
         {
             //Toast.makeText(this,"Please fill all details",Toast.LENGTH_SHORT).show();
