@@ -3,7 +3,9 @@ package com.example.prashanjeet.firebase;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -18,6 +20,12 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.onesignal.OneSignal;
+
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.Scanner;
 
 public class UserLogin extends AppCompatActivity {
     public Button loginUser,signupUser;
@@ -118,6 +126,9 @@ public class UserLogin extends AppCompatActivity {
             //progressDialog.dismiss();
             emailUser.setText("");
             passwordUser.setText("");
+
+            OneSignal.sendTag("User_id",firebaseUser.getEmail());
+
             Intent intent = new Intent(UserLogin.this, UserHome.class);
             //String mealId = user.getMealId();
             //intent.putExtra("mealId",mealId);
@@ -150,4 +161,9 @@ public class UserLogin extends AppCompatActivity {
 //
 //    }
 
+
+
+
 }
+
+

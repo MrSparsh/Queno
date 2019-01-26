@@ -113,7 +113,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
 
 
-                SubService subService= new SubService(serviceName, counters, startTime, handlingTime, details,id, str,strr);
+                SubService subService= new SubService(serviceName, counters, startTime, handlingTime, details, str,strr,id);
                 databaseUsers.child(id).setValue(subService);
 
 

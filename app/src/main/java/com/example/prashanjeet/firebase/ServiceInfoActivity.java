@@ -16,16 +16,14 @@ public class ServiceInfoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_service_info);
 
-        Button addLoc = (Button)findViewById(R.id.SignupButton);
+        Button addLoc = (Button)findViewById(R.id.AddLocation);
 
         addLoc.setOnClickListener(new View.OnClickListener(){
 
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(ServiceInfoActivity.this,MapsActivity.class);
-                String servicename,servicedomain,expectedtime,besttime;
-//                uname = getIntent().getStringExtra("Name");
-//                uemail = getIntent().getStringExtra("Email");
+
                 TextView ServiceName = (TextView)findViewById(R.id.SubServiceName);
                 TextView counters = (TextView)findViewById(R.id.NoOfCounters);
                 TextView handlingTime = (TextView)findViewById(R.id.HandlingTime);
@@ -42,7 +40,7 @@ public class ServiceInfoActivity extends AppCompatActivity {
 
 
                 intent.putExtra("ServiceName",ServiceName.getText().toString());
-                intent.putExtra("couters",counters.getText().toString());
+                intent.putExtra("counters",counters.getText().toString());
                 intent.putExtra("handlingTime",handlingTime.getText().toString());
                 intent.putExtra("startTime", startTime.getText().toString());
                 intent.putExtra("details", details.getText().toString());
