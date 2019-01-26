@@ -23,7 +23,7 @@
         android:id="@+id/addServiceButton"
         android:layout_width="50dp"
         android:background="#00f"
-        android:textSize="20dp"
+        android:textSize="30dp"
         android:layout_height="wrap_content"
 
         android:text="+"

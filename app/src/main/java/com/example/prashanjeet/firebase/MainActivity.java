@@ -68,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         gotoLogin=(Button)findViewById(R.id.GotouserLogin);
         gotoAdminLogin=(Button)findViewById(R.id.GotoAdminLogin);
         gotoLogin.setOnClickListener(new View.OnClickListener() {
@@ -86,5 +87,6 @@ public class MainActivity extends AppCompatActivity {
                 finish();
             }
         });
+
     }
 }
