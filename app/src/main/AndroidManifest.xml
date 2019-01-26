@@ -19,7 +19,8 @@
         <activity android:name=".LiveQueue" />
         <activity android:name=".AdminSignup" />
         <activity android:name=".UserSignup" />
-        <activity android:name=".UserLogin"></activity>
+        <activity android:name=".UserLogin" />
+        <activity android:name=".UserHome"></activity>
     </application>
 
 </manifest>
