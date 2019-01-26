@@ -10,6 +10,9 @@ public class User {
     public User(){
 
     }
+    public User(String name){
+        this.name=name;
+    }
 
     public User(String name, String mobile, String email, String id,String username) {
         this.name = name;

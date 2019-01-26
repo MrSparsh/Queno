@@ -94,7 +94,7 @@ public class MainScreenUser extends AppCompatActivity {
                     businessList.clear();
 
                     for (DataSnapshot mealSnapshot : dataSnapshot.getChildren()) {
-                        SubService a = mealSnapshot.getValue(SubService.class);
+                        SubService a = (SubService)mealSnapshot.getValue(SubService.class);
                         businessList.add(a);
 //
 //                        Date c = Calendar.getInstance().getTime();
