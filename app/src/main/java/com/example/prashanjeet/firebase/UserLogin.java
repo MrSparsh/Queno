@@ -118,7 +118,7 @@ public class UserLogin extends AppCompatActivity {
             //progressDialog.dismiss();
             emailUser.setText("");
             passwordUser.setText("");
-            Intent intent = new Intent(UserLogin.this, UserHome.class);
+            Intent intent = new Intent(UserLogin.this, MainScreenUser.class);
             //String mealId = user.getMealId();
             //intent.putExtra("mealId",mealId);
             // intent.putExtra("user_name",user.getName());
