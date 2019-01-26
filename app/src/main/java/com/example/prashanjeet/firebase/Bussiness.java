@@ -121,5 +121,9 @@ public class Bussiness extends AppCompatActivity {
 //        DatabaseReference adminsRef = FirebaseDatabase.getInstance().getReference("usersQueue").child(userId).child(serv.getId());
         DatabaseReference adminsRef = FirebaseDatabase.getInstance().getReference("usersQueue");
         adminsRef.child(userId).child(serv.getId()).setValue(serv);
+        CustomQ q =new CustomQ(0,42,10);
+
+        DatabaseReference qu = FirebaseDatabase.getInstance().getReference("serviceQ");
+        qu.child(serv.getId()).setValue(q);
     }
 }

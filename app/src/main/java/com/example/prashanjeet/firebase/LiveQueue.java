@@ -11,16 +11,16 @@ public class LiveQueue extends AppCompatActivity {
 
     DatabaseReference myRef;
     ListView queueListView;
-    QueueDataModel[] queueData;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_live_queue);
         queueListView =(ListView) findViewById(R.id.queueListView);
-        queueData = new QueueDataModel[5];
-        ListAdapter customListAdapter = new QueueListAdapter(this,queueData);
-        queueListView.setAdapter(customListAdapter);
+//        queueData = new QueueDataModel[5];
+//        ListAdapter customListAdapter = new QueueListAdapter(this,queueData);
+//        queueListView.setAdapter(customListAdapter);
 
     }
 }
