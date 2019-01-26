@@ -129,7 +129,7 @@ public class UserLogin extends AppCompatActivity {
 
             OneSignal.sendTag("User_id",firebaseUser.getEmail());
 
-            Intent intent = new Intent(UserLogin.this, UserHome.class);
+            Intent intent = new Intent(UserLogin.this, MainScreenUser.class);
             //String mealId = user.getMealId();
             //intent.putExtra("mealId",mealId);
             // intent.putExtra("user_name",user.getName());
