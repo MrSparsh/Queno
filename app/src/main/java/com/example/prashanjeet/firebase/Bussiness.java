@@ -5,6 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.CheckBox;
 import android.widget.ListAdapter;
 import android.widget.ListView;
@@ -18,6 +20,11 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.Date;
+import java.util.List;
+import java.util.Map;
 
 public class Bussiness extends AppCompatActivity {
 
@@ -25,6 +32,8 @@ public class Bussiness extends AppCompatActivity {
     ArrayList<SubService> businessList;
 
     private FirebaseAuth firebaseAuth;
+    private List<SubService> servList;
+    private SubService serv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +45,13 @@ public class Bussiness extends AppCompatActivity {
 
         businessList = new ArrayList<SubService>();
 
-
+        businessListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int i, long l) {
+                serv =businessList.get(i);
+                joinqueue(serv);
+            }
+        });
 
     }
     @Override
@@ -94,5 +109,13 @@ public class Bussiness extends AppCompatActivity {
             e.printStackTrace();
         }
 
+    }
+
+    public void joinqueue(SubService serv){
+        firebaseAuth = FirebaseAuth.getInstance();
+        String userId = firebaseAuth.getCurrentUser().getUid();
+//        DatabaseReference adminsRef = FirebaseDatabase.getInstance().getReference("usersQueue").child(userId).child(serv.getId());
+        DatabaseReference adminsRef = FirebaseDatabase.getInstance().getReference("usersQueue");
+        adminsRef.child(userId).child(serv.getId()).setValue(serv);
     }
 }
