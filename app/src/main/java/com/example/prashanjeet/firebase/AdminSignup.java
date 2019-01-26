@@ -56,7 +56,7 @@ public class AdminSignup extends AppCompatActivity {
         client = LocationServices.getFusedLocationProviderClient(this);
 
         if (ActivityCompat.checkSelfPermission(this, ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            return;
+
         }
 
         client.getLastLocation().addOnSuccessListener(AdminSignup.this, new OnSuccessListener<Location>() {
@@ -66,7 +66,7 @@ public class AdminSignup extends AppCompatActivity {
                     userLati = "" + location.getLatitude();
                     userLongi = ""  + location.getLongitude();
                     System.out.println(userLati + " " + userLongi);
-                    return;
+                    Toast.makeText(AdminSignup.this, userLati+" "+userLongi,Toast.LENGTH_LONG).show();
                 }
             }
         });
