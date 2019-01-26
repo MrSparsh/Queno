@@ -33,8 +33,6 @@ public class AdminLogin extends AppCompatActivity {
     int y;
     Admin user;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
