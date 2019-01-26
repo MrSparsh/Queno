@@ -12,6 +12,6 @@ public class Main2Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
-        System.out.println(getIntent().getStringExtra("Latitude") + "\n" + getIntent().getStringExtra("Longitude"));
+        System.out.println("Google " + getIntent().getStringExtra("LATI") + "\n" + getIntent().getStringExtra("LONGI"));
     }
 }

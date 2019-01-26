@@ -1,5 +1,4 @@
 package com.example.prashanjeet.firebase;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -19,8 +18,14 @@ public class GoogleMap extends AppCompatActivity {
         lat = (TextView)findViewById(R.id.latitiude);
         lon = (TextView)findViewById(R.id.longitude);
 
-        lat.setText( getIntent().getDoubleExtra("Latitude"));
-        lon.setText( getIntent().getDoubleExtra("Longitude"));
+        String s1 = getIntent().getStringExtra("LATI");
+        String s2 = getIntent().getStringExtra("LONGI");
+
+        lat.setText( s1 );
+        lon.setText( s2 );
+
+        System.out.println("Google"+ s1 + "  " + s2);
+
 
         mapbut = (Button)findViewById(R.id.mapbut);
 

@@ -74,20 +74,21 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 LatLongitude.add(latLng);
                 markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED));
                 System.out.println("--->" + LatLongitude.get(0).latitude + " " + LatLongitude.get(0).longitude) ;
-                Intent intent = new Intent(MapsActivity.this,GoogleMap.class);
+                mMap.addMarker(markerOptions);
+
                 double l1,l2;
                 l1 = LatLongitude.get(0).latitude;
                 l2 = LatLongitude.get(0).longitude;
-                String str = "" + l1;
-                intent.putExtra("Latitude",str);
-                String strr = "" + l2;
-                intent.putExtra("Longitude",strr);
-                mMap.addMarker(markerOptions);
                 try {
                     Thread.sleep(2000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
+                Intent intent = new Intent(MapsActivity.this,Main2Activity.class);
+                String str = "" + l1;
+                intent.putExtra("LATI",str);
+                String strr = "" + l2;
+                intent.putExtra("LONGI",strr);
                 startActivity(intent);
             }
         });

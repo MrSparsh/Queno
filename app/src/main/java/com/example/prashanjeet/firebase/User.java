@@ -6,6 +6,7 @@ package com.example.prashanjeet.firebase;
 public class User {
     private String name,mobile,email,username;
     private String id;
+
     public User(){
 
     }

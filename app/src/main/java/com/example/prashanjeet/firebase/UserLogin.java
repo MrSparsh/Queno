@@ -18,11 +18,6 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 public class UserLogin extends AppCompatActivity {
     public Button loginUser,signupUser;
@@ -123,11 +118,11 @@ public class UserLogin extends AppCompatActivity {
             //progressDialog.dismiss();
             emailUser.setText("");
             passwordUser.setText("");
-            Intent intent = new Intent(UserLogin.this, UserHome.class);
+            //Intent intent = new Intent(UserLogin.this, UserHome.class);
             //String mealId = user.getMealId();
             //intent.putExtra("mealId",mealId);
             // intent.putExtra("user_name",user.getName());
-            startActivity(intent);
+            //startActivity(intent);
             finish();
         }
         else{
