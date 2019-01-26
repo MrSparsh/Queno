@@ -32,6 +32,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         GoogleApiClient.ConnectionCallbacks,
         GoogleApiClient.OnConnectionFailedListener, LocationListener {
 
+    private String uname,uemail,expecttime,besttime,servicename,servicedomain;
     private GoogleMap mMap;
     private GoogleApiClient googlApiCli;
     private LocationRequest locationRequest;
@@ -44,6 +45,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
+
+        uname = getIntent().getStringExtra("UName");
+        uemail = getIntent().getStringExtra("Email");
+        servicename = getIntent().getStringExtra("ServiceName");
+        servicedomain = getIntent().getStringExtra("ServiceDomain");
+        expecttime = getIntent().getStringExtra("expected_time");
+        besttime = getIntent().getStringExtra("best_time");
 
         LatLongitude = new ArrayList<LatLng>();
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
@@ -85,6 +93,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     e.printStackTrace();
                 }
                 Intent intent = new Intent(MapsActivity.this,Main2Activity.class);
+                intent.putExtra("Name",uname);
+                intent.putExtra("Email",uemail);
+                intent.putExtra("servicename",servicename);
+                intent.putExtra("servicedomain",servicedomain);
+                intent.putExtra("expecttime",expecttime);
+                intent.putExtra("besttime",besttime);
                 String str = "" + l1;
                 intent.putExtra("LATI",str);
                 String strr = "" + l2;

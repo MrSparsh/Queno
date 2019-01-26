@@ -33,6 +33,7 @@ public class AdminSignup extends AppCompatActivity {
             }
         });
     }
+
     public boolean validate(){
         boolean flag=false;
         String sname,sdomain,aName,aEmail,aPassword,aContact;

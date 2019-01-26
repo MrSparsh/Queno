@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Intent inter = new Intent(MainActivity.this,GoogleMap.class);
+        Intent inter = new Intent(MainActivity.this,AddServiceAdmin.class);
         startActivity(inter);
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("message");
