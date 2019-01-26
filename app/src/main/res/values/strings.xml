@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Firebase</string>
+    <string name="GoogleMapApiKey">AIzaSyCxQeABk_UCrBzf5boc-pCgrSLWY3Rtth8</string>
+    <string name="title_activity_maps">Map</string>
 </resources>
