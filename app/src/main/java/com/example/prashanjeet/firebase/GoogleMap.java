@@ -16,11 +16,11 @@ public class GoogleMap extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_google_map);
 
-//        lat = (TextView)findViewById(R.id.latitiude);
-//        lon = (TextView)findViewById(R.id.longitude);
-//
-//        lat.setText("" + getIntent().getDoubleExtra("Latitude"));
-//        lon.setText( "" + getIntent().getDoubleExtra("Longitude"));
+        lat = (TextView)findViewById(R.id.latitiude);
+        lon = (TextView)findViewById(R.id.longitude);
+
+        lat.setText( getIntent().getDoubleExtra("Latitude"));
+        lon.setText( getIntent().getDoubleExtra("Longitude"));
 
         mapbut = (Button)findViewById(R.id.mapbut);
 

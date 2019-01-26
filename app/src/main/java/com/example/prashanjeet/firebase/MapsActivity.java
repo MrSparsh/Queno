@@ -74,7 +74,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 LatLongitude.add(latLng);
                 markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED));
                 System.out.println("--->" + LatLongitude.get(0).latitude + " " + LatLongitude.get(0).longitude) ;
-                Intent intent = new Intent(MapsActivity.this,Main2Activity.class);
+                Intent intent = new Intent(MapsActivity.this,GoogleMap.class);
                 double l1,l2;
                 l1 = LatLongitude.get(0).latitude;
                 l2 = LatLongitude.get(0).longitude;
