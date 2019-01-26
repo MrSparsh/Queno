@@ -64,13 +64,18 @@ public class MainScreenUser extends AppCompatActivity {
 
         businessList = new ArrayList<SubService>();
 
-//        businessListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> parent, View view, int i, long l) {
-//                serv =businessList.get(i);
-//                joinqueue(serv);
-//            }
-//        });
+        businessListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int i, long l) {
+                serv =businessList.get(i);
+                Intent intent = new Intent(MainScreenUser.this,LiveQueue.class);
+//                intent.putExtra("ServiceName",ServiceName.getText().toString());
+//                intent.putExtra("counters",counters.getText().toString());
+//                intent.putExtra("handlingTime",handlingTime.getText().toString());
+//                intent.putExtra("startTime", startTime.getText().toString());
+//                intent.putExtra("details", details.getText().toString());
+            }
+        });
 
     }
 
@@ -81,7 +86,7 @@ public class MainScreenUser extends AppCompatActivity {
         String userId = firebaseAuth.getCurrentUser().getUid();
         //progressDialog.setMessage("Fetching Details!!");
 
-        DatabaseReference adminsRef = FirebaseDatabase.getInstance().getReference("usersQueue").child(userId);
+        DatabaseReference adminsRef = FirebaseDatabase.getInstance().getReference("queueOfUser").child(userId);
 
         try {
 

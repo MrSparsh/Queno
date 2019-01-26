@@ -116,7 +116,7 @@ public class AdminLogin extends AppCompatActivity {
             //progressDialog.dismiss();
             emailUser.setText("");
             passwordUser.setText("");
-            Intent intent = new Intent(AdminLogin.this, AddServiceAdmin.class);
+            Intent intent = new Intent(AdminLogin.this, LiveQueue.class);
             //String mealId = user.getMealId();
             //intent.putExtra("mealId",mealId);
             // intent.putExtra("user_name",user.getName());

@@ -85,16 +85,16 @@ public class Bussiness extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(), "No Services found", Toast.LENGTH_SHORT).show();
                         // progressDialog.dismiss();
                     }
-                    businessListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                        @Override
-                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                            CheckBox checkBox = (CheckBox)view.findViewById(R.id.checkBox3);
-                            if(checkBox.isChecked()){
-                                Toast.makeText(Bussiness.this,"1"+position,Toast.LENGTH_SHORT).show();
-                            }
-                            Toast.makeText(Bussiness.this,"1"+position,Toast.LENGTH_SHORT).show();
-                        }
-                    });
+//                    businessListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//                        @Override
+//                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//                            CheckBox checkBox = (CheckBox)view.findViewById(R.id.checkBox3);
+//                            if(checkBox.isChecked()){
+//                                Toast.makeText(Bussiness.this,"1"+position,Toast.LENGTH_SHORT).show();
+//                            }
+//                            Toast.makeText(Bussiness.this,"1"+position,Toast.LENGTH_SHORT).show();
+//                        }
+//                    });
 
                 }
 
@@ -121,5 +121,9 @@ public class Bussiness extends AppCompatActivity {
 
         DatabaseReference qu = FirebaseDatabase.getInstance().getReference("serviceQ");
         qu.child(serv.getId()).setValue(q);
+        DatabaseReference uq = FirebaseDatabase.getInstance().getReference("queueOfUser");
+        uq.child(userId).child(serv.getId()).setValue("True");
+//        String key =uq.child(userId).push().getKey();
+//        uq.child(userId).child(key).setValue(serv.getId());
     }
 }

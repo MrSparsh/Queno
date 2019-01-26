@@ -4,12 +4,12 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/timeq"
         android:layout_width="5dp"
         android:layout_height="40dp"
         android:layout_weight="0.42"
         android:padding="10px"
-        android:text="Time"
+        android:hint="Time"
         android:textSize="18sp" />
 
     <ImageView
@@ -18,12 +18,12 @@
         android:src="@drawable/chain" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/detailsq"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:layout_weight="1"
         android:padding="10px"
-        android:text="details"
+        android:hint="details"
         android:textSize="18sp" />
 
 </LinearLayout>
