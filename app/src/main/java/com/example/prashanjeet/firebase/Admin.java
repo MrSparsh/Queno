@@ -6,14 +6,15 @@ package com.example.prashanjeet.firebase;
 
 public class Admin {
 
-    private String companyName,companyDomain,name,email,password,contact;
+    private String companyName,companyDomain,name,email,password,contact,userLati,userLongi;
     private String id;
 
     public Admin(){
 
     }
 
-    public Admin(String companyName,String companyDomain,String name, String email, String password,String contact,String id) {
+    public Admin(String companyName,String companyDomain,String name, String email, String password,String contact,String id,String userLati,
+                 String userLongi) {
         this.companyName=companyName;
         this.companyDomain=companyDomain;
         this.name = name;
@@ -21,6 +22,22 @@ public class Admin {
         this.password=password;
         this.contact=contact;
         this.id=id;
+        this.userLati=userLati;
+        this.userLongi=userLongi;
+    }
+
+    public String getUserLati() {
+        return userLati;
+    }
+
+    public String getUserLongi() {
+        return userLongi;
+    }
+
+    public void setUserLati(String userLati) {this.userLati = userLati;}
+
+    public void setUserLongi(String userLongi) {
+        this.userLongi = userLongi;
     }
 
     public String getCompanyName() {
