@@ -13,9 +13,7 @@ public class AddServiceAdmin extends AppCompatActivity {
 
     String [] nameOfService = {};
     Button addServiceButon ;
-    String username = "Nitish Kumar Khatri";
-    String email = "nitishkhatri161@gmail.com";
-    String mobile = "7884955626";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
