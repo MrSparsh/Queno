@@ -53,9 +53,9 @@
         <activity android:name=".UserLogin" />
         <activity android:name=".UserHome" />
         <activity android:name=".ServiceInfoActivity" />
-        <activity android:name=".SubServiceDetailsActivity"></activity>
+        <activity android:name=".SubServiceDetailsActivity"/>
 
-        <activity android:name=".AdminLogin"></activity>
+        <activity android:name=".AdminLogin"/>
     </application>
 
 </manifest>

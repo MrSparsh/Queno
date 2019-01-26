@@ -18,6 +18,9 @@ public class Main2Activity extends AppCompatActivity {
         + " " + getIntent().getStringExtra("expecttime") + " "  +
         getIntent().getStringExtra("besttime") +" "+getIntent().getStringExtra("LATI")+" "+getIntent().getStringExtra("LONGI"));
 
+          //SubService subService=    SubService(getIntent().getStringExtra("servicename"), String counters, String startTime, String handlingTime, String details,String lati, String longi)
+
+
         Intent intent = new Intent(Main2Activity.this,AddServiceAdmin.class);
         startActivity(intent);
 

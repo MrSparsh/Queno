@@ -6,15 +6,46 @@ package com.example.prashanjeet.firebase;
 
 public class SubService {
     boolean isOn;
-    String name, counters, startTime, handlingTime, details;
+    String name, counters, startTime, handlingTime, details, lati, longi, id;
 
-    public SubService(String name, String counters, String startTime, String handlingTime, String details) {
+    public SubService(){
+
+    }
+
+    public SubService(String name, String counters, String startTime, String handlingTime, String details,String lati, String longi,String id) {
         this.name = name;
         this.counters = counters;
         this.startTime = startTime;
         this.handlingTime = handlingTime;
         this.details = details;
         this.isOn = false;
+        this.lati=lati;
+        this.longi=longi;
+        this.id=id;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getLati() {
+        return lati;
+    }
+
+    public void setLati(String lati) {
+        this.lati = lati;
+    }
+
+    public String getLongi() {
+        return longi;
+    }
+
+    public void setLongi(String longi) {
+        this.longi = longi;
     }
 
     public boolean isOn() {

@@ -6,21 +6,42 @@ package com.example.prashanjeet.firebase;
 
 public class Admin {
 
-    private String companyName,companyDomain,name,email,password,contact;
+    private String companyName,companyDomain,name,email,password,contact,lati,longi;
     private String id;
 
     public Admin(){
 
     }
 
-    public Admin(String companyName,String companyDomain,String name, String email, String password,String contact,String id) {
+
+
+    public String getLati() {
+        return lati;
+    }
+
+    public void setLati(String lati) {
+        this.lati = lati;
+    }
+
+    public String getLongi() {
+        return longi;
+    }
+
+    public void setLongi(String longi) {
+        this.longi = longi;
+    }
+
+    public Admin(String companyName, String companyDomain, String name, String email, String password, String contact, String id, String lati, String longi) {
         this.companyName=companyName;
         this.companyDomain=companyDomain;
         this.name = name;
         this.email = email;
         this.password=password;
         this.contact=contact;
+
         this.id=id;
+        this.lati = lati;
+        this.longi=longi;
     }
 
     public String getCompanyName() {

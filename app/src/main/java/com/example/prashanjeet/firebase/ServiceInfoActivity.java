@@ -16,32 +16,36 @@ public class ServiceInfoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_service_info);
 
-        Button signupbtn = (Button)findViewById(R.id.SignupButton);
+        Button addLoc = (Button)findViewById(R.id.SignupButton);
 
-        signupbtn.setOnClickListener(new View.OnClickListener(){
+        addLoc.setOnClickListener(new View.OnClickListener(){
 
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(ServiceInfoActivity.this,MapsActivity.class);
-                String uname,uemail,servicename,servicedomain,expectedtime,besttime;
-                uname = getIntent().getStringExtra("Name");
-                uemail = getIntent().getStringExtra("Email");
-                TextView ServiceName = (TextView)findViewById(R.id.ServiceName);
-                TextView ServiceDomain = (TextView)findViewById(R.id.ServiceDomain);
-                TextView expected_time = (TextView)findViewById(R.id.expected_time);
-                TextView best_time = (TextView)findViewById(R.id.best_time);
-                if(ServiceName.getText().equals("") || ServiceDomain.getText().equals("")|| expected_time.getText().equals("")
-                        || best_time.getText().equals("")){
-                    Toast.makeText(ServiceInfoActivity.this,"All Needed!!!",Toast.LENGTH_LONG);
+                String servicename,servicedomain,expectedtime,besttime;
+//                uname = getIntent().getStringExtra("Name");
+//                uemail = getIntent().getStringExtra("Email");
+                TextView ServiceName = (TextView)findViewById(R.id.SubServiceName);
+                TextView counters = (TextView)findViewById(R.id.NoOfCounters);
+                TextView handlingTime = (TextView)findViewById(R.id.HandlingTime);
+                TextView startTime = (TextView)findViewById(R.id.StartTime);
+                TextView details = (TextView)findViewById(R.id.Details);
+
+
+
+                if(ServiceName.getText().equals("") || counters.getText().equals("")||  handlingTime.getText().equals("")
+                        || startTime.getText().equals("") || details.getText().equals("")){
+                    Toast.makeText(ServiceInfoActivity.this,"All info Needed!!!",Toast.LENGTH_LONG);
                     return;
                 }
 
-                intent.putExtra("UName",uname);
-                intent.putExtra("Email",uemail);
+
                 intent.putExtra("ServiceName",ServiceName.getText().toString());
-                intent.putExtra("ServiceDomain",ServiceDomain.getText().toString());
-                intent.putExtra("expected_time",expected_time.getText().toString());
-                intent.putExtra("best_time",best_time.getText().toString());
+                intent.putExtra("couters",counters.getText().toString());
+                intent.putExtra("handlingTime",handlingTime.getText().toString());
+                intent.putExtra("startTime", startTime.getText().toString());
+                intent.putExtra("details", details.getText().toString());
 
                 startActivity(intent);
             }

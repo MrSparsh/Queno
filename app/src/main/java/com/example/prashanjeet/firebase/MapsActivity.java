@@ -25,6 +25,9 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 
@@ -32,7 +35,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         GoogleApiClient.ConnectionCallbacks,
         GoogleApiClient.OnConnectionFailedListener, LocationListener {
 
-    private String uname,uemail,expecttime,besttime,servicename,servicedomain;
+    private String serviceName,counters,handlingTime,startTime,details;
     private GoogleMap mMap;
     private GoogleApiClient googlApiCli;
     private LocationRequest locationRequest;
@@ -40,18 +43,24 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private Marker currentUserLocMark;
     private final int ReqUserLocCode = 99;
     private ArrayList <LatLng> LatLongitude;
+    public FirebaseAuth firebaseAuth;
+    // private DatabaseReference databaseUserMeals;
+    public DatabaseReference databaseUsers;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
 
-        uname = getIntent().getStringExtra("UName");
-        uemail = getIntent().getStringExtra("Email");
-        servicename = getIntent().getStringExtra("ServiceName");
-        servicedomain = getIntent().getStringExtra("ServiceDomain");
-        expecttime = getIntent().getStringExtra("expected_time");
-        besttime = getIntent().getStringExtra("best_time");
+        firebaseAuth = FirebaseAuth.getInstance();
+        databaseUsers = FirebaseDatabase.getInstance().getReference("subServices");
+
+
+        serviceName = getIntent().getStringExtra("ServiceName");
+        counters=  getIntent().getStringExtra("counters");
+        handlingTime= getIntent().getStringExtra("handlingTime");
+        startTime = getIntent().getStringExtra("startTime");
+        details = getIntent().getStringExtra("details");
 
         LatLongitude = new ArrayList<LatLng>();
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
@@ -92,17 +101,23 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                Intent intent = new Intent(MapsActivity.this,Main2Activity.class);
-                intent.putExtra("Name",uname);
-                intent.putExtra("Email",uemail);
-                intent.putExtra("servicename",servicename);
-                intent.putExtra("servicedomain",servicedomain);
-                intent.putExtra("expecttime",expecttime);
-                intent.putExtra("besttime",besttime);
+                Intent intent = new Intent(MapsActivity.this ,Main2Activity.class);
+
                 String str = "" + l1;
                 intent.putExtra("LATI",str);
                 String strr = "" + l2;
                 intent.putExtra("LONGI",strr);
+                startActivity(intent);
+
+                String id = firebaseAuth.getCurrentUser().getUid();
+
+
+
+                SubService subService= new SubService(serviceName, counters, startTime, handlingTime, details,id, str,strr);
+                databaseUsers.child(id).setValue(subService);
+
+
+                intent = new Intent(MapsActivity.this, AddServiceAdmin.class);
                 startActivity(intent);
             }
         });

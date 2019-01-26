@@ -12,7 +12,7 @@ import android.widget.TextView;
 public class AddServiceAdmin extends AppCompatActivity {
 
     String [] nameOfService = {};
-    Button addServiceButton ;
+    Button addServiceButon ;
     String username = "Nitish Kumar Khatri";
     String email = "nitishkhatri161@gmail.com";
     String mobile = "7884955626";
@@ -23,20 +23,16 @@ public class AddServiceAdmin extends AppCompatActivity {
         setContentView(R.layout.activity_add_service_admin);
 
         ListView listView = (ListView) findViewById(R.id.list);
-        addServiceButton = (Button)findViewById(R.id.addServiceButton);
+
         CustomAdapter customAdapter = new CustomAdapter();
         listView.setAdapter(customAdapter);
-
-        addServiceButton.setOnClickListener(new View.OnClickListener(){
-
+        addServiceButon = (Button)findViewById(R.id.addServiceButton1);
+        addServiceButon.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(AddServiceAdmin.this,ServiceInfoActivity.class);
-                intent.putExtra("Name",username);
-                intent.putExtra("Email",email);
+            public void onClick(View v) {
+                Intent  intent  = new  Intent(AddServiceAdmin.this, ServiceInfoActivity.class);
                 startActivity(intent);
             }
-
         });
 
     }

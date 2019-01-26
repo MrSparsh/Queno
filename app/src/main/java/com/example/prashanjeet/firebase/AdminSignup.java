@@ -50,6 +50,8 @@ public class AdminSignup extends AppCompatActivity {
                     aEmail = adminEmail.getText().toString();
                     aPassword = adminPassword.getText().toString();
                     aContact = adminCont.getText().toString();
+                    //final String lati,longi ;
+
 
                     firebaseAuth.createUserWithEmailAndPassword(aEmail,aPassword).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
@@ -59,9 +61,9 @@ public class AdminSignup extends AppCompatActivity {
                                 String id = firebaseAuth.getCurrentUser().getUid();
                                 //String id1 = databaseUserMeals.push().getKey();
                                 //UserMeal userMeal = new UserMeal(studentN,studentRegn);
-                                Admin admin =new Admin(sname,sdomain,aName, aEmail, aPassword,aContact,id);
+                                //Admin admin =new Admin(sname,sdomain,aName, aEmail, aPassword,aContact, id, lati, longi);
                                 try {
-                                    databaseAdmins.child(id).setValue(admin);
+                                    //databaseAdmins.child(id).setValue(admin);
                                     //databaseUserMeals.child(id).setValue(userMeal);
                                     sendEmailVerification();
                                 }

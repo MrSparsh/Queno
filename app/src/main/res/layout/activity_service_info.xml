@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.prashanjeet.firebase.AdminSignup">
+    tools:context="com.example.prashanjeet.firebase.ServiceInfoActivity">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -22,53 +22,39 @@
             android:layout_weight="1.5"
             android:background="@android:color/holo_blue_light" />
     </LinearLayout>
+
     <LinearLayout
         android:id="@+id/loginLayout"
         android:layout_width="300dp"
-        android:layout_height="400dp"
+        android:layout_height="500dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="18dp"
         android:background="@drawable/login"
         android:orientation="vertical"
         android:padding="30dp"
         android:weightSum="1"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        tools:layout_editor_absoluteY="0dp"
-        tools:layout_editor_absoluteX="0dp">
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginBottom="20dp"
             android:layout_marginTop="-20dp"
-            android:layout_weight="0.14">
+            android:layout_weight="0.2">
+
             <EditText
-                android:id="@+id/ServiceName"
+                android:id="@+id/SubServiceName"
                 android:layout_width="match_parent"
                 android:layout_height="51dp"
                 android:layout_marginTop="5dp"
-                android:hint="ServiceName"
+                android:hint="SubServiceName"
                 android:inputType="text"
                 android:paddingBottom="1dp"
                 android:textColor="@android:color/white"
                 android:textColorHint="@android:color/white" />
 
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginBottom="20dp"
-            android:layout_marginTop="-20dp"
-            android:layout_weight="0.14">
-            <EditText
-                android:id="@+id/ServiceDomain"
-                android:layout_width="match_parent"
-                android:layout_height="51dp"
-                android:layout_marginTop="5dp"
-                android:hint="ServiceDomain"
-                android:inputType="text"
-                android:paddingBottom="1dp"
-                android:textColor="@android:color/white"
-                android:textColorHint="@android:color/white" />
         </LinearLayout>
 
         <LinearLayout
@@ -76,30 +62,14 @@
             android:layout_height="0dp"
             android:layout_marginBottom="20dp"
             android:layout_marginTop="-20dp"
-            android:layout_weight="0.14">
+            android:layout_weight="0.2">
+
             <EditText
-                android:id="@+id/expected_time"
+                android:id="@+id/NoOfCounters"
                 android:layout_width="match_parent"
                 android:layout_height="51dp"
                 android:layout_marginTop="5dp"
-                android:hint="Expected Time"
-                android:inputType="text"
-                android:paddingBottom="1dp"
-                android:textColor="@android:color/white"
-                android:textColorHint="@android:color/white" />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginBottom="20dp"
-            android:layout_marginTop="-20dp"
-            android:layout_weight="0.14">
-            <EditText
-                android:id="@+id/best_time"
-                android:layout_width="match_parent"
-                android:layout_height="51dp"
-                android:layout_marginTop="5dp"
-                android:hint="Best Time"
+                android:hint="NoOfCounters"
                 android:inputType="text"
                 android:paddingBottom="1dp"
                 android:textColor="@android:color/white"
@@ -108,13 +78,69 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="10dp"
-            android:layout_weight="0.14"
+            android:layout_height="0dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="-20dp"
+            android:layout_weight="0.2">
+
+            <EditText
+                android:id="@+id/StartTime"
+                android:layout_width="match_parent"
+                android:layout_height="51dp"
+                android:layout_marginTop="5dp"
+                android:hint="queue start time"
+                android:inputType="text"
+                android:paddingBottom="1dp"
+                android:textColor="@android:color/white"
+                android:textColorHint="@android:color/white" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="-20dp"
+            android:layout_weight="0.2">
+
+            <EditText
+                android:id="@+id/HandlingTime"
+                android:layout_width="match_parent"
+                android:layout_height="51dp"
+                android:layout_marginTop="5dp"
+                android:hint="HandlingTime"
+                android:inputType="text"
+                android:paddingBottom="1dp"
+                android:textColor="@android:color/white"
+                android:textColorHint="@android:color/white" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="-20dp"
+            android:layout_weight="0.27">
+
+            <EditText
+                android:id="@+id/Details"
+                android:layout_width="match_parent"
+                android:layout_height="51dp"
+                android:layout_marginTop="5dp"
+                android:hint="Details"
+                android:inputType="text"
+                android:paddingBottom="1dp"
+                android:textColor="@android:color/white"
+                android:textColorHint="@android:color/white" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
             android:layout_marginTop="20dp"
+            android:layout_weight="0.14"
             android:paddingTop="10dp">
 
             <Button
-                android:id="@+id/SignupButton"
+                android:id="@+id/AddLocation"
                 android:layout_width="234dp"
                 android:layout_height="40dp"
                 android:layout_marginBottom="20dp"
@@ -122,9 +148,13 @@
                 android:layout_marginTop="-3dp"
                 android:background="@drawable/loginbuttonlayout"
                 android:onClick="loginClicked"
-                android:text = "Add Location On Map"
+                android:text="Add location on map"
                 android:textColor="@android:color/white" />
         </LinearLayout>
+
+
+
     </LinearLayout>
+
 
 </RelativeLayout>
