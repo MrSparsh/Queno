@@ -28,7 +28,7 @@ public class BussinessListAdapter extends ArrayAdapter<SubService> implements Vi
         }
         LayoutInflater myCustomInflater = LayoutInflater.from(getContext());
         convertView = myCustomInflater.inflate(R.layout.activity_business_list, parent, false);
-        TextView textView = (TextView) convertView.findViewById(R.id.textViewBusinessList);
+        TextView textView = (TextView) convertView.findViewById(R.id.nameTextField);
 
         SubService appo = servList.get(position);
         textView.setText(appo.getName());
@@ -41,12 +41,6 @@ public class BussinessListAdapter extends ArrayAdapter<SubService> implements Vi
         int position = (Integer) v.getTag();
         Object object = getItem(position);
         SubService subService = (SubService) object;
-    }
-
-    private static class ViewHolder {
-        TextView subject_name;
-        TextView time;
-        TextView venue_name;
     }
 
 }

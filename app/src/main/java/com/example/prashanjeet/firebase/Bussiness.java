@@ -5,11 +5,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.CheckBox;
+import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -30,7 +29,7 @@ public class Bussiness extends AppCompatActivity {
 
     ListView businessListView;
     ArrayList<SubService> businessList;
-
+    ArrayList<Boolean> selectedList;
     private FirebaseAuth firebaseAuth;
     private List<SubService> servList;
     private SubService serv;
@@ -44,7 +43,7 @@ public class Bussiness extends AppCompatActivity {
         firebaseAuth=FirebaseAuth.getInstance();
 
         businessList = new ArrayList<SubService>();
-
+        selectedList = new ArrayList<Boolean>();
         businessListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int i, long l) {
@@ -74,6 +73,7 @@ public class Bussiness extends AppCompatActivity {
                     for (DataSnapshot mealSnapshot : dataSnapshot.getChildren()) {
                         SubService a = mealSnapshot.getValue(SubService.class);
                         businessList.add(a);
+                        selectedList.add(false);
 
                     }
 
@@ -85,16 +85,24 @@ public class Bussiness extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(), "No Services found", Toast.LENGTH_SHORT).show();
                         // progressDialog.dismiss();
                     }
-//                    businessListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//                        @Override
-//                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                            CheckBox checkBox = (CheckBox)view.findViewById(R.id.checkBox3);
-//                            if(checkBox.isChecked()){
-//                                Toast.makeText(Bussiness.this,"1"+position,Toast.LENGTH_SHORT).show();
-//                            }
-//                            Toast.makeText(Bussiness.this,"1"+position,Toast.LENGTH_SHORT).show();
-//                        }
-//                    });
+                    businessListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                        @Override
+                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                            Toast.makeText(Bussiness.this,"1"+position,Toast.LENGTH_SHORT).show();
+                            TextView nameTextView = (TextView) view.findViewById(R.id.nameTextField);
+                            TextView durationTextView = (TextView) view.findViewById(R.id.durationTextField);
+                            TextView descriptionTextView = (TextView) view.findViewById(R.id.descriptionTextField);
+                            ImageView checkBoxImageView = (ImageView) view.findViewById(R.id.checkBoxImageView);
+                            if(selectedList.get(position)==false){
+                                checkBoxImageView.setImageResource(R.drawable.checkboxicon);
+                                selectedList.set(position,true);
+                            }else{
+                                checkBoxImageView.setImageResource(R.drawable.checkbox_empty);
+                                selectedList.set(position,false);
+                            }
+
+                        }
+                    });
 
                 }
 
