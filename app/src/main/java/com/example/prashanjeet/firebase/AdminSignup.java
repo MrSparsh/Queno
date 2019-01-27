@@ -2,7 +2,10 @@ package com.example.prashanjeet.firebase;
 
 
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.location.Location;
 import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -10,7 +13,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
@@ -18,12 +24,17 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import static android.Manifest.permission.ACCESS_FINE_LOCATION;
+
 public class AdminSignup extends AppCompatActivity {
-    public EditText serviceName,serviceDomain,adminName,adminEmail,adminPassword,adminCont;
+    public EditText serviceName, serviceDomain, adminName, adminEmail, adminPassword, adminCont;
     public Button signupBtn;
     public FirebaseAuth firebaseAuth;
     // private DatabaseReference databaseUserMeals;
     public DatabaseReference databaseAdmins;
+    String userLati;
+    String userLongi;
+    private FusedLocationProviderClient client;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,13 +42,35 @@ public class AdminSignup extends AppCompatActivity {
         databaseAdmins = FirebaseDatabase.getInstance().getReference("admins");
         firebaseAuth = FirebaseAuth.getInstance();
         setContentView(R.layout.activity_admin_signup);
-        serviceName  = (EditText)findViewById(R.id.ServiceName);
-        serviceDomain = (EditText)findViewById(R.id.ServiceDomain);
-        adminName = (EditText)findViewById(R.id.Name);
-        adminEmail = (EditText)findViewById(R.id.Email);
-        adminPassword = (EditText)findViewById(R.id.Signuppassword);
-        adminCont = (EditText)findViewById(R.id.Contact);
-        signupBtn = (Button)findViewById(R.id.SignupButton);
+        serviceName = (EditText) findViewById(R.id.ServiceName);
+        serviceDomain = (EditText) findViewById(R.id.ServiceDomain);
+        adminName = (EditText) findViewById(R.id.Name);
+        adminEmail = (EditText) findViewById(R.id.Email);
+        adminPassword = (EditText) findViewById(R.id.Signuppassword);
+        adminCont = (EditText) findViewById(R.id.Contact);
+        signupBtn = (Button) findViewById(R.id.SignupButton);
+
+        requestPermissions();
+
+        //Get Self Location
+        client = LocationServices.getFusedLocationProviderClient(this);
+
+        if (ActivityCompat.checkSelfPermission(this, ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            return;
+        }
+
+        client.getLastLocation().addOnSuccessListener(AdminSignup.this, new OnSuccessListener<Location>() {
+            @Override
+            public void onSuccess(Location location) {
+                if(location != null){
+                    userLati = "" + location.getLatitude();
+                    userLongi = ""  + location.getLongitude();
+                    System.out.println(userLati + " " + userLongi);
+                    return;
+                }
+            }
+        });
+
         signupBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -59,7 +92,7 @@ public class AdminSignup extends AppCompatActivity {
                                 String id = firebaseAuth.getCurrentUser().getUid();
                                 //String id1 = databaseUserMeals.push().getKey();
                                 //UserMeal userMeal = new UserMeal(studentN,studentRegn);
-                                Admin admin =new Admin(sname,sdomain,aName, aEmail, aPassword,aContact,id);
+                                Admin admin =new Admin(sname,sdomain,aName, aEmail, aPassword,aContact,id,userLati,userLongi);
                                 try {
                                     databaseAdmins.child(id).setValue(admin);
                                     //databaseUserMeals.child(id).setValue(userMeal);
@@ -93,6 +126,11 @@ public class AdminSignup extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    private void requestPermissions()
+    {
+        ActivityCompat.requestPermissions(this,new String[]{ACCESS_FINE_LOCATION},1);
     }
 
     public boolean validate(){
